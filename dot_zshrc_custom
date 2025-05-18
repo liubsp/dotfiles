@@ -1,0 +1,11 @@
+rename() {
+  if [[ $# -ne 2 ]]; then
+    echo "Usage: rename <source_path> <new_name>"
+    return 1
+  fi
+
+  local src="$1"
+  local dst="$(dirname "$src")/$2"
+
+  mv "$src" "$dst"
+}
